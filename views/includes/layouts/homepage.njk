@@ -1,0 +1,153 @@
+{% extends "base.njk" %}
+{% block pageheader %}{% endblock %}
+{% block content %}
+    <div class="hero-slider">
+        {% for banner in banners %}
+            <div class="single-slide" style="background-image: url({{ banner.background }})">
+                <div class="inner">
+                    <div class="container">
+                        <div class="row justify-content-{{ banner.align }}">
+                            <div class="col-lg-6 text-{{ banner.align }}">
+                                <div class="slide-content">
+                                    <h2>{{ banner.headline }}</h2>
+                                    <p>{{ banner.blurb }}</p>
+                                    <div class="slide-btn">
+                                        <a href="{{ banner.link.url }}" class="button">{{ banner.link.text }}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="service-area bg1 sp">
+        <div class="container">
+            <div class="section-title white">
+                <h2>{{ serviceText.title }}</h2>
+                <p>{{ serviceText.description }}</p>
+            </div>
+            <div class="row">
+                {% for service in collections.services %}
+                <div class="col-lg-4 col-md-6 single-service-3">
+                    <div class="inner">
+                        <div class="title">
+                            <div class="icon">
+                                <i class="fa fa-{{ service.data.faIcon }}"></i>
+                            </div>
+                            <h4>{{ service.data.title }}</h4>
+                        </div>
+                        <div class="content">
+                            <p>{{ service.data.description }}</p>
+                            <a href="{{ service.data.url }}">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+           </div>
+        </div>
+    </div>
+    <div class="about-area sp">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="about-content">
+                        <h3>{{ about.title }}</h3>
+                        <p>{{ about.description }}</p>
+                        <a href="{{ about.link.url }}" class="button">{{ about.link.text }}</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="about-img">
+                        <img src="{{ about.image }}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="brand-area">
+        <div class="container">
+            <div class="row">
+                {% for brand in collections.brands %}
+                <div class="col-md-3 col-6 single-brand">
+                        <div class="inner">
+                            <a href="{{ brand.data.url }}">
+                                <img src="{{ brand.data.logo }}" alt="{{ brand.data.title }}">
+                            </a>
+                        </div>
+                    </div>
+                {% endfor %}  
+            </div>
+        </div>
+    </div>
+    <div class="testimonial-area spb">
+        <div class="container">
+            <div class="section-title">
+                <h2>{{ testimonialText.title }}</h2>
+                <p>{{ testimonialText.description }}</p>
+            </div>
+            <div class="testimonial-slider bordered">
+                {% for testimonial in collections.testimonials %}
+                <div class="single-slide">
+                    <div class="inner">
+                        <p>{{ testimonial.data.quote }}</p>
+                        <div class="client-info">
+                            <div class="client-img">
+                                <img src="{{ testimonial.data.headshot }}" alt="client">
+                            </div>
+                            <div class="client-data">
+                                <h4>{{ testimonial.data.name }}</h4>
+                                <span>{{ testimonial.data.jobTitle }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="faq-area sp bg2">
+        <div class="container">
+            <div class="section-title">
+                <h2>{{ faqText.title }}</h2>
+                <p>{{ faqText.description }}</p>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="faq">
+                        <div class="single-item">
+                            <h4>Low Cost Advertising Available or Not?</h4>
+                            <div class="content">
+                                Pellentesque habitant morbi tristique senectus et netus et malesu ada fames and reply to all.
+                            </div>
+                        </div>
+                        <div class="single-item">
+                            <h4>What Is The Big R For Marketing Your Business?</h4>
+                            <div class="content">
+                                Pellentesque habitant morbi tristique senectus et netus et malesu ada fames and reply to all.
+                            </div>
+                        </div>
+                        <div class="single-item">
+                            <h4>Does Using Banner Stands Increase Trade Show Traffic?</h4>
+                            <div class="content">
+                                Pellentesque habitant morbi tristique senectus et netus et malesu ada fames and reply to all.
+                            </div>
+                        </div>
+                        <div class="single-item">
+                            <h4>How To Write Better Advertising Copy?</h4>
+                            <div class="content">
+                                Pellentesque habitant morbi tristique senectus et netus et malesu ada fames and reply to all.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="faq-img text-center">
+                        <img src="{{faqText.image}}" alt="faq">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

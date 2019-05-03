@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+ <html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Flat Pro || Buisness HTML template</title>
+
+    <!-- Required CSS files -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/owl.carousel.css">
+    <link rel="stylesheet" href="/assets/css/barfiller.css">
+    <link rel="stylesheet" href="/assets/css/animate.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/slicknav.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+
+<body>
+    <div class="preloader">
+        <span class="preloader-spin"></span>
+    </div>
+    <div class="site">
+
+
+        <header>
+            <div class="container">
+                <div class="row">
+                    <div class="col-6 col-sm-3 logo-column">
+                        <a href="/" class="logo">
+                            <img src="/assets/img/logo.png" alt="logo">
+                        </a>
+                    </div>
+                    <div class="col-6 col-sm-9 nav-column clearfix">
+                        <div class="right-nav">
+                            <div class="header-social">
+                                {% for social in settings.socials %}
+                                <a href="{{social.url}}" class="fa fa-{{social.network}}"></a>
+                                {% endfor %}            
+                            </div>
+                        </div>
+                        <nav id="menu" class="d-none d-lg-block">
+                            <ul>
+                                {% for item in settings.nav %}
+                                <li {% if item.activeKey == activeKey %}class="current-menu-item" {% endif %}><a href="{{ item.url }}">{{ item.linkText }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        {% block pageheader %}
+        <div class="page-title sp" style="background-image: url({{ bannerImg }})">
+            <div class="container text-center">
+                <h2>{{ title }}</h2>
+                <p>{{ description }}</p>
+            </div>
+        </div>
+        {% endblock %}
+        
+
+        {% block precontent %}{% endblock %}
+        {% block content %}
+            {{ content | safe }}
+        {% endblock %}
+        {% block postcontent %}{% endblock %}
+    </div>
+    <footer>
+       
+        <div class="mt-5 footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="copyright-txt">
+                            © 2017 Flat Pro. All Rights Reserved.
+                        </div>
+                    </div>
+                    <div class="col-lg-6 text-right">
+                        <div class="footer-nav">
+                        {% for item in settings.nav %}
+                            <a href="{{ item.url }}">{{ item.linkText }}</a>
+
+                        {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    </div>
+
+    <!--Required JS files-->
+    <script src="/assets/js/jquery-2.2.4.min.js"></script>
+    <script src="/assets/js/vendor/popper.min.js"></script>
+    <script src="/assets/js/vendor/bootstrap.min.js"></script>
+    <script src="/assets/js/vendor/owl.carousel.min.js"></script>
+    <script src="/assets/js/vendor/isotope.pkgd.min.js"></script>
+    <script src="/assets/js/vendor/jquery.barfiller.js"></script>
+    <script src="/assets/js/vendor/loopcounter.js"></script>
+    <script src="/assets/js/vendor/slicknav.min.js"></script>
+    <script src="/assets/js/active.js"></script>
+
+</body>
+
+</html>

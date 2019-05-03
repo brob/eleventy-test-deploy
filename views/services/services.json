@@ -1,0 +1,6 @@
+{
+    "layout": "layouts/simple.njk",
+    "bannerImg": "/assets/img/page-title.jpg",
+    "activeKey": "services"
+
+}

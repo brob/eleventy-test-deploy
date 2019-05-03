@@ -1,0 +1,45 @@
+{
+    "title": "This is the title of the site",
+    "socials": [
+        {
+            "network": "facebook",
+            "url": "http://facebook.com"
+        },
+        {
+            "network": "twitter",
+            "url": "http://twitter.com"
+        }
+    ],
+    "nav": [
+        {
+            "linkText": "Home",
+            "url": "/",
+            "activeKey": "home"
+        },
+        {
+            "linkText": "About",
+            "url": "/about",
+            "activeKey": "about"
+        },
+        {
+            "linkText": "Services",
+            "url": "/services",
+            "activeKey": "services"
+        },
+        {
+            "linkText": "Testimonials",
+            "url": "/testimonials",
+            "activeKey": "testimonials"
+        },
+        {
+            "linkText": "Contact",
+            "url": "/contact",
+            "activeKey": "contact"
+        }
+    ],
+    "contact": {
+        "phone": "(192) 220-0485",
+        "email": "something@something.com",
+        "address": "33 Heathcote vista, Cassinfort, LA"
+    }
+}

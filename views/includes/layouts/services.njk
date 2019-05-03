@@ -1,0 +1,24 @@
+{% extends "layouts/simple.njk" %}
+
+{% block postcontent %}
+<div class="row ml-1 mr-1">
+            {% for service in collections.services %} 
+            <div class="col-lg-4 col-md-6 single-service-2">
+                    <div class="inner">
+                        <div class="title">
+
+                        <div class="icon">
+                            <i class="fa fa-{{ service.data.faIcon }}"></i>
+                        </div>
+                        <h4>{{ service.data.title }}</h4>
+                    </div>
+                    <div class="content">
+                        <p>{{ service.data.description }}</p>
+                        <a class="button" href="{{ service.url }}">Read More &raquo;</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+{% endblock %}

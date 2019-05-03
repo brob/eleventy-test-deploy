@@ -1,0 +1,59 @@
+---
+layout: base.njk
+title: Contact us
+activeKey: contact
+mapUrl: https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d417678.41243995464!2d-90.2509743799112!3d35.12886358951622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87d57e1eea439745%3A0xd193f315601ab6fe!2sMemphis%2C+TN!5e0!3m2!1sen!2sus!4v1556906515488!5m2!1sen!2sus
+---
+
+    <div class="contact-area sp">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 contact-info">
+                <div class="single-info">
+                    <h5>Phone</h5>
+                    <p>{{ settings.contact.phone }}</p>
+                </div>
+                <div class="single-info">
+                    <h5>Email</h5>
+                    <p>{{ settings.contact.email }}</p>
+                </div>
+                <div class="single-info">
+                    <h5>Address</h5>
+                    <p>{{ settings.contact.address }}</p>
+                </div>
+                <div class="single-info">
+                    <h5>Social</h5>
+                    <p>
+                        {% for social in settings.socials %}
+                            <a href="{{social.url}}" class="fa fa-{{social.network}}"></a>
+                        {% endfor %}  
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <form action="#" class="contact-form">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <input type="text" placeholder="Name">
+                        </div>
+                        <div class="col-lg-6">
+                            <input type="email" placeholder="Email">
+                        </div>
+                        <div class="col-lg-12">
+                            <input type="text" placeholder="Subject">
+                        </div>
+                        <div class="col-lg-12">
+                            <textarea placeholder="Message"></textarea>
+                        </div>
+                        <div class="col-lg-12">
+                            <input class="button" type="submit" value="Send Message">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>    
+<div class="google-map">
+    <iframe src="{{ mapUrl }}"></iframe>
+</div>   
